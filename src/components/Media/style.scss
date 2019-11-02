@@ -1,0 +1,213 @@
+@import "../../variables";
+
+// =========================
+// Media Component
+// =========================
+
+// =========================
+// Hero
+// =========================
+.c-live {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 45px;
+    
+    &__on {
+      width: 24px;
+      height: 24px;
+      background-color: $alert-color;
+      border-radius: 100px;
+    }
+    &__title {
+      padding-left: 10px;
+    }
+    
+  }
+  .l-watch {
+    @extend %l-section;
+  }
+  
+  .c-watch {
+    position: relative;
+    height: 90vh;
+    
+    p {
+      width: 500px;
+      max-width: 100%;
+    }
+    
+    .l-container {
+      height: 100%;
+    }
+    
+    &__content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    
+    &__title {
+        font-size: $font-heading-size-one;
+        font-weight: 600; 
+        margin: 0px;
+    }
+    
+    &__subtitle {
+        font-size: $font-heading-size-five;
+        font-weight: 100;  
+        letter-spacing: 2px;
+        margin: 0px;
+    }
+    
+    &__overlay {
+      background-color: $overlay-color;
+      background: -moz-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 35%);
+      background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 35%);
+      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 35%);
+      z-index: -1;
+      position: absolute;
+      left: 0%;
+      top: 0%;
+      right: 0%;
+      bottom: 0%;
+    }
+    
+    &__video {
+      position: absolute;
+      overflow: hidden;
+      z-index: -2;
+      left: 0%;
+      top: 0%;
+      right: 0%;
+      bottom: 0%;
+    }
+    
+    &__latest {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    
+    &__series {
+      opacity: 0.7;
+      padding: 0px 10px;
+      
+      h4 {
+        font-size: 1em;
+        font-weight: 100;
+        margin: 0px;
+      }
+      h5 {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin: 0px;
+      }
+      a {
+        text-decoration: none;
+        color: $color-light;
+      }
+    }
+    
+    &__poster {
+      position: relative;
+      min-width: 192px;
+      min-height: 268px;
+      background-size: cover;
+    }
+    
+  }
+  
+  .c-player {
+    
+    &__ {
+      
+    }
+    
+  }
+  
+  .l-grid {
+    
+    &__item {
+      
+    }
+    
+  }
+  
+// =========================
+// Carousel
+// =========================
+  .container {
+    display: flex;
+    padding: 0 55px;
+  
+    .item {
+      background: green;
+      flex: 0 0 19.7%;
+      text-align: center;
+      margin: 0 2px;
+      transition: transform 300ms ease 100ms;
+  
+      &:hover {
+        transform: scale(1.5) !important;
+        ~ .item {
+          transform: translateX(25%);
+        }
+      }
+    }
+  
+    &:hover {
+      .item{
+        transform: translateX(-25%);
+      }
+    }
+  
+  }
+  
+
+  .content {
+    margin-top: 40px;
+    height: 300px;
+    position: relative;
+  }
+  
+  .background {
+    display: flex;
+    height: 100%;
+  }
+  
+  .left {
+    background: black;
+    width: 30%;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        background-image: linear-gradient(to right,#000,transparent);
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        width: 275px;
+    }
+  }
+  
+  .right {
+    background: green;
+    width: 70%;
+  }
+  
+  .content-container {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px
+  }

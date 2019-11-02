@@ -1,0 +1,102 @@
+/* autoprefixer grid: autoplace */
+
+$font-stack: Helvetica, sans-serif;
+$font-heading-size-one: 4em;
+$font-heading-size-two: 3em;
+$font-heading-size-three: 2em;
+$font-heading-size-four: 1.7em;
+$font-heading-size-five: 1em;
+
+$background-color-dark: black;
+$background-color-light: white;
+
+$primary-color: hsl(206, 6%, 25%);
+$secondary-color: hsl(206, 4%, 25%);
+$alert-color: hsl(356, 98%, 52%);
+
+$color-light: rgba(255,255,255,1);
+$color-dark: rgba(255,255,255,1);
+
+$overlay-color: rgba(0,0,0,0.3);
+
+$transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+
+// =========================
+// Global
+// =========================
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $background-color-dark;
+}
+a {
+  cursor: pointer;
+  transition: $transition;
+}
+a:hover {
+  
+}
+/* Helpers */
+.h-odd {
+  background-color: $primary-color;
+}
+
+.h-even {
+  background-color: $secondary-color;
+}
+
+.h-light {
+  color: white;
+}
+
+.h-nolink {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+/* Layout */
+%w-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
+  position: relative;
+}
+
+.l-container {
+  @extend %w-container;
+}
+
+%l-section {
+  background-color: $background-color-light;
+}
+
+/* Button Text */
+.btn {
+  text-decoration: none;
+  background-color: white;
+  color: #888;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px 0px;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 5px;
+}
+.btn__icon {
+  background-color: white;
+  color: #fff;
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: -10px; /* realign button text padding */
+  font-weight: 600;
+  background-color: #333;
+  opacity: .4;
+  border-radius: 5px 0 0 5px;
+}
+.btn__text {
+  padding: 0 10px;
+  border-radius: 0 5px 5px 0;
+}

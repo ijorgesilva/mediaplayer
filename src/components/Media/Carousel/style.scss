@@ -1,0 +1,263 @@
+
+// =========================
+// Item
+// =========================
+
+.item {
+    flex: 0 0 19.7%;
+    transition: transform 300ms ease 100ms;
+    margin: 0 2px;
+    position: relative;
+  
+    img {
+      height: 100%;
+      width: 100%;
+      vertical-align: top;
+    }
+}
+
+.c-media__item {
+  position: relative;
+
+  a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+}
+  
+// =========================
+// Mark
+// =========================
+.mark {
+    box-sizing: border-box;
+    border: solid 4px #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+  
+    &:before,
+    &:after {
+      position: absolute;
+      width: 0;
+      height: 0;
+      content: '';
+      top: 100%;
+      left: 50%;
+      margin-left: -13px;
+      border-style: solid;
+      border-width: 7px 13px 0 13px;
+    }
+  
+    &:before {
+      border-color: rgba(0, 0, 0, 0.15) transparent transparent transparent;
+      margin-top: 5px;
+    }
+  
+    &:after {
+      margin-top: 4px;
+      border-color: #fff transparent transparent transparent;
+    }
+  }
+  
+// =========================
+// Slide Wrapper
+// =========================
+
+.slider-wrapper {
+    padding: 40px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+// =========================
+// Slide 
+// =========================
+.slider {
+    display: flex;
+    position: relative;
+  
+    &__container {
+      display: flex;
+      padding: 0 55px;
+      transition: transform 300ms ease 100ms;
+      z-index: 3;
+      width: 100%;
+    }
+  
+    &:not(&--open) .item:hover .show-details-button {
+      opacity: 1;
+    }
+  
+    &:not(&--open) .item:hover {
+      transform: scale(1.5) !important;
+    }
+  
+    &:not(&--open):hover .item {
+      transform: translateX(-25%);
+    }
+  
+    &:not(&--open) .item:hover ~ .item {
+      transform: translateX(25%);
+    }
+  }
+  
+
+// =========================
+// Slide Button
+// =========================
+  .slide-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 55px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 40px 0;
+    z-index: 4;
+  
+    span {
+      width: 25px;
+      color: #fff;
+      display: block;
+      margin: 0 auto;
+    }
+  
+    &--next {
+      right: 0;
+  
+      span {
+        transform: rotateZ(-90deg);
+      }
+    }
+  
+    &--prev {
+      left: 0;
+  
+      span {
+        transform: rotateZ(90deg);
+      }
+    }
+  }
+  
+
+// =========================
+// Show Details
+// =========================
+
+  .show-details-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 300ms ease 100ms;
+    background: transparent;
+    border: 0;
+    outline: none;
+    width: 100%;
+  
+    span {
+      display: block;
+      width: 14px;
+      margin: 0 auto;
+      color: white;
+    }
+  }
+  
+
+// =========================
+// Content
+// =========================
+  .content {
+    position: relative;
+    height: 37vw;
+    margin-top: -40px;
+  
+    &__background,
+    &__background__shadow,
+    &__background__image,
+    &__area {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+  
+    &__background {
+      left: 0;
+      right: 0;
+  
+      &__shadow {
+        left: 0;
+        background: #000;
+        width: 30%;
+        z-index: 2;
+  
+        &:before {
+          content: '';
+          position: absolute;
+          z-index: 10;
+          background-image: linear-gradient(to right,#000,transparent);
+          top: 0;
+          bottom: 0;
+          left: 100%;
+          width: 275px;
+        }
+      }
+  
+      &__image {
+        right: 0;
+        width: 70%;
+        height: 100%;
+        background-position: center 10%;
+        background-size: cover;
+        z-index: 1;
+      }
+    }
+  
+    &__area {
+      left: 0;
+      right: 0;
+      height: 100%;
+      z-index: 3;
+  
+      &__container {
+        padding: 30px 70px;
+        color: wheat;
+      }
+    }
+  
+    &__title {
+      font-size: 45px;
+      color: #fff;
+      font-weight: 700;
+    }
+  
+    &__description {
+      font-size: 18px;
+      color: #999;
+      margin-top: 20px;
+      max-width: 500px;
+    }
+  
+    &__close {
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      outline: none;
+      border: none;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    }
+  }
